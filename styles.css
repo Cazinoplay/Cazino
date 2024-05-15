@@ -540,9 +540,20 @@ footer h1 {
         bottom: 78px;
     }
 }
-@media (max-width: 471px){
+@media (max-width: 471px)
     .controls {
-        right: 90px;
-        bottom: 72px;
+        right: 84px;
+        bottom: 97px;
+    }
+}
+@media (max-width: 471px) {
+    .controls {
+        right: 83px;
+        bottom: 117px;
+    }
+    .slot-machine {
+        right: 11px;
+        height: 278px;
+        bottom: 169px;
     }
 }
