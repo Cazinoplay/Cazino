@@ -546,14 +546,14 @@ footer h1 {
         bottom: 97px;
     }
 }
-@media (max-width: 471px) {
+@media (max-width: 375) {
     .controls {
         right: 83px;
         bottom: 117px;
     }
     .slot-machine {
-        right: 11px;
+        right: 0px;
         height: 278px;
-        bottom: 169px;
+        bottom: 133px;
     }
 }
