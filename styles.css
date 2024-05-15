@@ -540,9 +540,9 @@ footer h1 {
         bottom: 78px;
     }
 }
-@media (max-width: 380px)
+@media (max-width: 471px){
     .controls {
-        right: 74px;
-        bottom: 173px;
+        right: 90px;
+        bottom: 72px;
     }
 }
