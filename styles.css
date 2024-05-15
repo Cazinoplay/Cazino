@@ -1,0 +1,548 @@
+body {
+    background: rgb(243,243,243);
+    background: linear-gradient(90deg, rgba(243,243,243,1) 0%, rgba(149,143,143,1) 0%, rgba(206,206,206,1) 50%, rgba(81,81,81,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.slot-machine {
+    width: 450px; /* Увеличим ширину для более удобного размещения */
+    height: 280px;
+    border: 10px solid #2ecc71;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ecf0f1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    right: -550px;
+}
+
+
+
+.reel-container {
+    display: flex;
+}
+
+.reel {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #2ecc71;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: spin 5s linear infinite; /* Анимация вращения */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.reel:nth-child(1) {
+    animation-duration: 5s; /* Увеличиваем длительность анимации для первого рычага */
+}
+
+.reel:nth-child(2) {
+    animation-duration: 6s; /* Увеличиваем длительность анимации для второго рычага */
+}
+
+.reel:nth-child(3) {
+    animation-duration: 7s; /* Увеличиваем длительность анимации для третьего рычага */
+}
+
+.lever-container {
+    position: relative;
+    width: 140px;
+    height: 60px;
+    overflow: hidden;
+}
+
+#lever {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#lever:hover {
+    background-color: #2980b9;
+}
+
+
+#levers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#levers:hover {
+    background-color: #2980b9;
+}
+
+#lever .fas {
+    color: white;
+    font-size: 3rem;
+    transform: rotate(-20deg); /* Наклоняем рычаг немного */
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#lever:hover .lever-image {
+    transform: translateY(5px);
+}
+
+header {
+    color: black;
+    position: relative;
+    top: -300px;
+    right: -50px;
+    background: rgb(206,206,206);
+    background: linear-gradient(90deg, rgba(206,206,206,1) 0%, rgba(81,81,81,1) 0%, rgba(35,53,50,1) 100%, rgba(243,243,243,1) 100%);
+    width: 100%;
+    height: 25%;
+    left: -180px;
+}
+
+header ul li {
+    display: inline-block;
+    margin-left: 25px;
+    font-size: 30px;
+    color: white;
+    transition: all .5s;
+    position: relative;
+    top: -50px;
+    right: -550px;
+}
+
+header ul li a {
+    top: -250px;
+    text-decoration: none;
+    color: white;
+}
+
+header ul li:hover {
+    color: black;
+    transform: scale(1.1);
+}
+
+header img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    bottom: -20px;
+    right: -150px;
+    transition: all .5s;
+}
+
+header img:hover {
+    transform: scale(1.1);
+}
+
+.balance-container {
+    position: absolute;
+    top: 250px;
+    left: 250px;
+    color: white;
+    font-size: 35px;
+    background: rgba(168,152,153,0.56);
+}
+
+.controls {
+    position: absolute;
+    right: 300px;
+}
+
+#bet {
+    width: 135px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#lever {
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#lever:hover {
+    background-color: #2980b9;
+}
+
+.reel:nth-child(1) {
+    animation-duration: 2s; /* Initial duration for first reel */
+}
+
+.reel:nth-child(2) {
+    animation-duration: 4s; /* Duration doubled for second reel */
+}
+
+.reel:nth-child(3) {
+    animation-duration: 6s; /* Duration increased further for third reel */
+}
+
+/* Other CSS styles */
+/* Добавленные стили для фейерверков */
+#fireworks-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    pointer-events: none;
+}
+
+.firework {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fffb02 10%, #ff0000 80%);
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    animation: fireworks 2s linear infinite;
+}
+
+.sr-block {
+    background: rgba(107,90,90,0.56);
+    width: 70%;
+    height: 900px;
+    z-index: 0;
+    position: fixed;
+}
+.win-square {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    z-index: 9999;
+    animation: zoomIn 0.5s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+#win-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0; /* Начально невидим */
+    transition: opacity 1s ease-in-out; /* Плавное появление/исчезновение */
+}
+
+#win-message {
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #3498db;
+    max-width: 80%;
+}
+/* Стили для мини-игры */
+.mini-game {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #ccc;
+    padding: 20px;
+    z-index: 999;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.cell {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+/* Пример стилей для магазина */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.shop-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.item {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.item button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media screen and (max-width: 768px) {
+    /* Изменение стилей для заголовка и изображения в шапке */
+    header img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .shop-link a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    /* Изменение стилей для кнопки "Играть" и поля ввода ставки */
+    .controls {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #bet {
+        width: 100%;
+        max-width: 200px;
+        padding: 8px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    #play-button {
+        width: 100%;
+        max-width: 200px;
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+
+.item button:hover {
+    background-color: #2980b9;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Стили для кнопки "Магазин" в шапке */
+.shop-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.shop-link a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.shop-link a:hover {
+    background-color: #2980b9;
+}
+
+
+footer {
+    background: #393839;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+
+footer h1 {
+    color: white;
+}
+
+
+@media (max-width:1325px) {
+    .controls {
+        right: 466px;
+        bottom: -25px;
+    }
+    body {
+        background: #636163;
+    }
+}
+
+@media (max-width:1085px) {
+    .balance-container {
+        top: 154px;
+        right: -353px;
+    }
+    .sr-block {
+        display: none;
+    }
+    .slot-machine {
+        right: -168px;
+
+    }
+    header {
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+    .controls {
+        right: 277px;
+        bottom: 51px;
+    }
+    .balance-container {
+        width: 225px;
+    }
+}
+
+@media (max-width:471px) {
+    .controls {
+        right: 118px;
+        bottom: 173px;
+    }
+
+    #bet {
+        width: 109%;
+        max-width: 477px;
+        padding: 19px;
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+    #switchToMemoryGame {
+        top: -115px;
+        left: -300px;
+    }
+
+    #levers {
+        width: 254px;
+        height: 146px;
+        font-size: 50px;
+    }
+
+    html {
+        width: 100%;
+    }
+
+    .slot-machine {
+        right: 0px;
+        height: 278px;
+        bottom: 202px;
+    }
+
+    .balance-container {
+        top: 22px;
+        left: 15px;
+    }
+
+    body {
+        background: #636163;
+    }
+}
+
+#switchToMemoryGame {
+    position: relative;
+    top: 4px;
+    width: 100px;
+}
+@media (max-width:320px) {
+    .slot-machine {
+        right: -28px;
+    }
+    .controls {
+        right: 32px;
+        bottom: 78px;
+    }
+}
+@media (max-width: 380px)
+    .controls {
+        right: 74px;
+        bottom: 173px;
+    }
+}

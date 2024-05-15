@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казино</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Подключаем стили FontAwesome -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Designer.png" type="image/x-icon">
+
+</head>
+<body>
+<div class="sr-block">
+    <img src="sr.jpeg" alt="">
+</div>
+<div class="slot-machine">
+    <div class="reel-container">
+        <div class="reel"></div>
+        <div class="reel"></div>
+        <div class="reel"></div>
+    </div>
+    <div id="lever" class="lever-container">
+        <i class="fas fa-lever fa-2x"></i>
+    </div>
+    <div id="result"></div>
+    <div id="fireworks-container">
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+    </div>
+</div>
+
+<header>
+    <img src="Designer.png" alt="">
+
+</header>
+<div class="balance-container">
+    <span>Баланс: <span id="balance">1000</span></span>
+</div>
+<div class="controls">
+    <input type="number" id="bet" min="10" max="100" placeholder="Введите ставку">
+    <button id="levers">Играть</button>
+</div>
+<script src="script.js"></script>
+<audio id="winSound">
+    <source src="win_sound.mp3" type="audio/mpeg">
+</audio>
+<audio id="leverSound">
+    <source src="win_sound2.mp3" type="audio/mpeg">
+</audio>
+
+<footer>
+    <h1>©2024 создание сайта "ILYAS"</h1>
+</footer>
+
+</body>
+</html>
