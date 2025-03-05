@@ -149,3 +149,40 @@ footer {
         font-size: 16px;
     }
 }
+
+/* Стили для шапки */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ff6f61;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+}
+
+header h1 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #ff6f61;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    header .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+}
